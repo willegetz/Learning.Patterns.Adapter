@@ -1,10 +1,10 @@
-﻿using System;
+﻿using AdapterDemo.Model;
+using AdapterDemo.Test;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Data.OleDb;
 using System.IO;
 using System.Linq;
-using AdapterDemo.Model;
-using AdapterDemo.Test;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdapterDemo
 {
