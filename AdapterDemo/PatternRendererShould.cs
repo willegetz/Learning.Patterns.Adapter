@@ -27,7 +27,7 @@ namespace AdapterDemo
 
             var patterns = new List<Pattern>() { pattern };
 
-            var renderer = new PatternRenderer(null);
+            var renderer = new PatternRenderer(new DataPatternRenderer());
 
             var result = renderer.ListPatterns(patterns);
 
@@ -53,7 +53,7 @@ namespace AdapterDemo
 
             var patterns = new List<Pattern>() { patternOne, patternTwo };
 
-            var renderer = new PatternRenderer(null);
+            var renderer = new PatternRenderer(new DataPatternRenderer());
 
             var result = renderer.ListPatterns(patterns);
 
