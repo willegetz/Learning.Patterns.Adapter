@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\DataRenderer.cs" />
+    <Compile Include="Model\DataPatternRenderer.cs" />
+    <Compile Include="Model\IDataPatternRenderer.cs" />
     <Compile Include="Model\Pattern.cs" />
     <Compile Include="Model\PatternRenderer.cs" />
     <Compile Include="PatternRendererShould.cs" />
