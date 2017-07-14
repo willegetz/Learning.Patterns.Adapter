@@ -57,6 +57,7 @@
     <Compile Include="Model\DataPatternRenderer.cs" />
     <Compile Include="Model\IDataPatternRenderer.cs" />
     <Compile Include="Model\Pattern.cs" />
+    <Compile Include="Model\PatternDataAdapter.cs" />
     <Compile Include="Model\PatternRenderer.cs" />
     <Compile Include="PatternRendererShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

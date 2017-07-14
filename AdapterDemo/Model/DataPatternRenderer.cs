@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -9,16 +10,23 @@ namespace AdapterDemo.Model
     {
         public string ListPatterns(IEnumerable<Pattern> patterns)
         {
-            var sb = new StringBuilder();
-            sb.AppendLine("Rendering Data:");
-            sb.AppendLine("Id".PadRight(20) + " " + "Name".PadRight(20) + " " + "Description".PadRight(20) + " ");
+            /*
+             * This class is what will call the datarenderer render method we want to use.
+             * A new dataAdapter needs to be created which will fullfill the contract with datarendere
+             * for patterns.
+             */
+            string renderedData;
+            var patternDataAdapter = new PatternDataAdapter(patterns);
 
-            foreach (var pattern in patterns)
+            var renderer = new DataRenderer(patternDataAdapter);
+
+            using (var writer = new StringWriter())
             {
-                sb.AppendLine(pattern.Id.ToString().PadRight(20) + " " + pattern.Name.ToString().PadRight(20) + " " + pattern.Description.ToString().PadRight(20) + " ");
+                renderer.Render(writer);
+                renderedData = writer.ToString();
             }
 
-            return sb.ToString().Trim();
+            return renderedData.Trim();
         }
     }
 }
